@@ -10,7 +10,7 @@ const projectsData = [
       "A modern responsive portfolio showcasing my skills, projects, resume, and contact information with smooth animations.",
     tech: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
     github: "https://github.com/RaviNakiya/portfolio",
-    live: "https://ravi-nakiya-portfolio.vercel.app/",
+    live: "https://nakiyaravi.github.io/myportfolio/",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const projectsData = [
       "Entity Framework Core",
     ],
     github: "https://github.com/RaviNakiya/employee-management-system",
-    live: "https://employee-demo.vercel.app",
+    live: "",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const projectsData = [
       "JWT authentication, refresh token, role-based authorization, forgot password and email verification.",
     tech: ["ASP.NET Core", "React", "JWT", "SQL Server"],
     github: "https://github.com/RaviNakiya/auth-system",
-    live: "https://auth-demo.vercel.app",
+    live: "",
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const projectsData = [
       "Manage projects and daily tasks with role-based permissions and beautiful dashboard.",
     tech: ["React", "ASP.NET Core", "SQL Server"],
     github: "https://github.com/RaviNakiya/task-manager",
-    live: "https://task-demo.vercel.app",
+    live: "",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const projectsData = [
       "Patient registration, appointments, billing, doctors and reports management system.",
     tech: ["ASP.NET Core", "SQL Server", "React"],
     github: "https://github.com/RaviNakiya/hospital",
-    live: "https://hospital-demo.vercel.app",
+    live: "",
   },
   {
     id: 6,
@@ -61,7 +61,7 @@ const projectsData = [
       "Inventory tracking, suppliers, purchase orders, sales reports and stock management.",
     tech: ["React", "ASP.NET Core", "SQL Server"],
     github: "https://github.com/RaviNakiya/inventory",
-    live: "https://inventory-demo.vercel.app",
+    live: "",
   },
 ];
 
