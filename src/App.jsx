@@ -1,21 +1,15 @@
-import Navbar from './components/Navbar';
-import Hero from './sections/Hero';
-import About from './sections/About';
-import Projects from './sections/Projects';
-import Skills from './sections/Skills';
-import Contact from './sections/Contact';
-import Footer from './components/Footer';
+import { Route, Routes } from 'react-router-dom';
+import NotFound from './sections/NotFound';
+import PortfolioLayout from './PortfolioLayout';
 
 function App() {
+
   return (
     <main className="font-sans selection:bg-dusty selection:text-cream bg-cream text-dark min-h-screen">
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<PortfolioLayout />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </main>
   )
 }

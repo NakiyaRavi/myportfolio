@@ -38,6 +38,7 @@ const container = {
   },
 };
 
+
 const item = {
   hidden: {
     opacity: 0,
@@ -57,6 +58,7 @@ const item = {
 };
 
 export default function Skills() {
+
   return (
     <section
       id="skills"
@@ -132,24 +134,26 @@ export default function Skills() {
   viewport={{ once: true }}
   className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-5"
 >
-  {skills.map((skill) => (<motion.div
-  key={skill}
-  variants={item}
-  whileHover={{
-    y: -10,
-    scale: 1.08,
-    rotateX: 8,
-    rotateY: -8,
-  }}
-  whileTap={{
-    scale: 0.96,
-  }}
-  transition={{
-    type: "spring",
-    stiffness: 320,
-    damping: 18,
-  }}
-  className="
+  
+  {skills.map((skill) => (
+    <motion.div
+      key={skill}
+      variants={item}
+      whileHover={{
+        y: -10,
+        scale: 1.08,
+        rotateX: 8,
+        rotateY: -8,
+      }}
+      whileTap={{
+        scale: 0.96,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 320,
+        damping: 18,
+      }}
+      className="
     group
     relative
     overflow-hidden
@@ -167,18 +171,19 @@ export default function Skills() {
     duration-500
     cursor-pointer
   "
->
-  {/* Hover Gradient */}
-  <div className="absolute inset-0 bg-gradient-to-r from-sky-500 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+    >
+      {/* Hover Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-sky-500 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
-  {/* Glow Effect */}
-  <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-white/30 blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+      {/* Glow Effect */}
+      <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-white/30 blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-  {/* Skill Name */}
-  <span className="relative z-10 text-sm md:text-base font-semibold text-slate-800 group-hover:text-white transition-colors duration-300">
-    {skill}
-  </span>
-</motion.div>  ))}
+      {/* Skill Name */}
+      <span className="relative z-10 text-sm md:text-base font-semibold text-slate-800 group-hover:text-white transition-colors duration-300">
+        {skill}
+      </span>
+    </motion.div>
+  ))}
 </motion.div>
 
 {/* Bottom Decoration */}

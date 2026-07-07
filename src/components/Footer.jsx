@@ -1,6 +1,8 @@
 import { Github, Instagram, Linkedin, Whatsapp } from '../sections/Icons';
+import { HashLink as Link } from 'react-router-hash-link';
 
 export default function Footer() {
+  
   return (
     <footer className="bg-dark border-t border-dusty/20 pt-16 pb-8 mt-10 text-cream">
       <div className="max-w-6xl mx-auto px-6">
@@ -18,10 +20,10 @@ export default function Footer() {
           <div className="md:col-span-1">
             <h4 className="text-lg font-semibold mb-4 text-cream">Quick Links</h4>
             <ul className="flex flex-col gap-3 text-cream/70 text-sm font-medium">
-              <li><a href="#home" className="hover:text-dusty hover:translate-x-1 inline-block transition-all">Home</a></li>
-              <li><a href="#about" className="hover:text-dusty hover:translate-x-1 inline-block transition-all">About</a></li>
-              <li><a href="#projects" className="hover:text-dusty hover:translate-x-1 inline-block transition-all">Projects</a></li>
-              <li><a href="#contact" className="hover:text-dusty hover:translate-x-1 inline-block transition-all">Contact</a></li>
+              <li><Link smooth to="/#home" className="hover:text-dusty hover:translate-x-1 inline-block transition-all">Home</Link></li>
+              <li><Link smooth to="/#about" className="hover:text-dusty hover:translate-x-1 inline-block transition-all">About</Link></li>
+              <li><Link smooth to="/#projects" className="hover:text-dusty hover:translate-x-1 inline-block transition-all">Projects</Link></li>
+              <li><Link smooth to="/#contact" className="hover:text-dusty hover:translate-x-1 inline-block transition-all">Contact</Link></li>
             </ul>
           </div>
 
@@ -32,7 +34,7 @@ export default function Footer() {
               <a href="https://github.com/NakiyaRavi" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full border border-dusty/20 text-cream/70 hover:text-dusty hover:border-dusty transition-all hover:-translate-y-1 shadow-sm">
                   <Github size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/nakiya-raviraj-1b2373343" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full border border-dusty/20 text-cream/70 hover:text-dusty hover:border-dusty transition-all hover:-translate-y-1 shadow-sm">
+              <a href="https://www.linkedin.com/in/nakiya-raviraj-1b2373343404" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full border border-dusty/20 text-cream/70 hover:text-dusty hover:border-dusty transition-all hover:-translate-y-1 shadow-sm">
                   <Linkedin size={20} />
               </a>
               <a href="https://www.instagram.com/nakiya_ravi_12" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full border border-dusty/20 text-cream/70 hover:text-dusty hover:border-dusty transition-all hover:-translate-y-1 shadow-sm">

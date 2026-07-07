@@ -25,7 +25,7 @@ const projectsData = [
       "Entity Framework Core",
     ],
     github: "https://github.com/RaviNakiya/employee-management-system",
-    live: "",
+    live: "https://nakiyaravi.github.io/myportfolio/",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const projectsData = [
       "JWT authentication, refresh token, role-based authorization, forgot password and email verification.",
     tech: ["ASP.NET Core", "React", "JWT", "SQL Server"],
     github: "https://github.com/RaviNakiya/auth-system",
-    live: "",
+    live: "https://nakiyaravi.github.io/myportfolio/",
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const projectsData = [
       "Manage projects and daily tasks with role-based permissions and beautiful dashboard.",
     tech: ["React", "ASP.NET Core", "SQL Server"],
     github: "https://github.com/RaviNakiya/task-manager",
-    live: "",
+    live: "https://nakiyaravi.github.io/myportfolio/",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const projectsData = [
       "Patient registration, appointments, billing, doctors and reports management system.",
     tech: ["ASP.NET Core", "SQL Server", "React"],
     github: "https://github.com/RaviNakiya/hospital",
-    live: "",
+    live: "https://nakiyaravi.github.io/myportfolio/",
   },
   {
     id: 6,
@@ -61,7 +61,7 @@ const projectsData = [
       "Inventory tracking, suppliers, purchase orders, sales reports and stock management.",
     tech: ["React", "ASP.NET Core", "SQL Server"],
     github: "https://github.com/RaviNakiya/inventory",
-    live: "",
+    live: "https://nakiyaravi.github.io/myportfolio/",
   },
 ];
 

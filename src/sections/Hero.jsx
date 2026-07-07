@@ -22,6 +22,8 @@ const itemVariants = {
   },
 };
 
+
+
 const words = [".NET API Developer", "React Developer", "SQL Server Expert"];
 
 const useTypingAnimation = (words, typeSpeed = 100, eraseSpeed = 50, delay = 1500) => {
@@ -140,7 +142,7 @@ export default function Hero() {
                 <a href="https://github.com/RaviNakiya" target="_blank" rel="noopener noreferrer" className="text-dark/60 hover:text-dark transition-colors">
                     <Github size={22} />
                 </a>
-                <a href="https://www.linkedin.com/in/nakiya-raviraj-1b2373343" target="_blank" rel="noopener noreferrer" className="text-dark/60 hover:text-dark transition-colors">
+                <a href="https://www.linkedin.com/in/nakiya-raviraj-1b2373343404" target="_blank" rel="noopener noreferrer" className="text-dark/60 hover:text-dark transition-colors">
                     <Linkedin size={22} />
                 </a>
                 <a href="https://www.instagram.com/nakiya_ravi_12" target="_blank" rel="noopener noreferrer" className="text-dark/60 hover:text-dark transition-colors">

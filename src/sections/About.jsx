@@ -44,7 +44,7 @@ const techStack = {
 
   Frontend: [
     "React.js",
-    "Anguler js",
+    "AngularJS",
     "JavaScript (ES6+)",
     "HTML5",
     "CSS3",
@@ -54,7 +54,7 @@ const techStack = {
 
   Database: [
     "SQL Server",
-    "NOSQL",
+    "NoSQL",
   ],
 
   Tools: [
