@@ -25,7 +25,7 @@ const projectsData = [
       "Entity Framework Core",
     ],
     github: "https://github.com/RaviNakiya/employee-management-system",
-    live: "https://nakiyaravi.github.io/myportfolio/",
+    live: "https://github.com/NakiyaRavi/Employee-Management-System",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const projectsData = [
       "JWT authentication, refresh token, role-based authorization, forgot password and email verification.",
     tech: ["ASP.NET Core", "React", "JWT", "SQL Server"],
     github: "https://github.com/RaviNakiya/auth-system",
-    live: "https://nakiyaravi.github.io/myportfolio/",
+    live: "https://github.com/NakiyaRavi/Auth-System",
   },
   {
     id: 4,
@@ -42,26 +42,17 @@ const projectsData = [
     description:
       "Manage projects and daily tasks with role-based permissions and beautiful dashboard.",
     tech: ["React", "ASP.NET Core", "SQL Server"],
-    github: "https://github.com/RaviNakiya/task-manager",
-    live: "https://nakiyaravi.github.io/myportfolio/",
+    github: "https://github.com/NakiyaRavi/task-manager",
+    live: "https://nakiyaravi.github.io/task-manager/",
   },
   {
     id: 5,
-    title: "Hospital Management",
+    title: "TextUtils",
     description:
-      "Patient registration, appointments, billing, doctors and reports management system.",
-    tech: ["ASP.NET Core", "SQL Server", "React"],
-    github: "https://github.com/RaviNakiya/hospital",
-    live: "https://nakiyaravi.github.io/myportfolio/",
-  },
-  {
-    id: 6,
-    title: "Inventory Management",
-    description:
-      "Inventory tracking, suppliers, purchase orders, sales reports and stock management.",
-    tech: ["React", "ASP.NET Core", "SQL Server"],
-    github: "https://github.com/RaviNakiya/inventory",
-    live: "https://nakiyaravi.github.io/myportfolio/",
+      "A simple text manipulation tool with features like copy, paste, and various text transformations.",
+    tech: ["React", "JavaScript"],
+    github: "https://github.com/NakiyaRavi/TextUtils",
+    live: "https://nakiyaravi.github.io/TextUtils/",
   },
 ];
 
