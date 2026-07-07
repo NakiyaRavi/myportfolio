@@ -16,7 +16,6 @@
     "lucide-react": "^1.17.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-router-dom": "^7.18.1",
     "react-scroll": "^1.9.3"
   },
   "devDependencies": {
