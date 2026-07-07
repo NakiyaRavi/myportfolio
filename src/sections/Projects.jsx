@@ -9,7 +9,7 @@ const projectsData = [
     description:
       "A modern responsive portfolio showcasing my skills, projects, resume, and contact information with smooth animations.",
     tech: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-    github: "https://github.com/RaviNakiya/portfolio",
+    github: "https://github.com/NakiyaRavi/myportfolio",
     live: "https://nakiyaravi.github.io/myportfolio/",
   },
   {
