@@ -12,6 +12,11 @@
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 html {
   scroll-behavior: smooth;
 }
