@@ -43,7 +43,7 @@ const projectsData = [
       "Manage projects and daily tasks with role-based permissions and beautiful dashboard.",
     tech: ["React", "ASP.NET Core", "SQL Server"],
     github: "https://github.com/NakiyaRavi/task-manager",
-    live: "https://nakiyaravi.github.io/task-manager/",
+    live: "https://github.com/NakiyaRavi/task-manager",
   },
   {
     id: 5,
