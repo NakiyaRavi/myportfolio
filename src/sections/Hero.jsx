@@ -146,7 +146,7 @@ export default function Hero() {
                 <a href="https://www.instagram.com/nakiya_ravi_12" target="_blank" rel="noopener noreferrer" className="text-dark/60 hover:text-dark transition-colors">
                     <Instagram size={22} />
                 </a>
-                <a href="https://wa.me/8200086009" target="_blank" rel="noopener noreferrer" className="text-dark/60 hover:text-dark transition-colors">
+                <a href="https://wa.me/918200086009" target="_blank" rel="noopener noreferrer" className="text-dark/60 hover:text-dark transition-colors">
                     <Whatsapp size={22} />
                 </a>
             </div>
