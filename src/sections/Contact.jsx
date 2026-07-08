@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Loader2 } from "lucide-react";
+import {
+  Loader2, Send, ArrowRight
+} from "lucide-react";
 
 export default function Contact() {
   const [status, setStatus] = useState({
@@ -33,267 +35,337 @@ export default function Contact() {
 
       if (response.ok) {
         setStatus({
-          message: "✅ Thank you! Your message has been sent successfully.",
+          message: "✅ Message sent successfully!",
           type: "success",
         });
 
         form.reset();
       } else {
         setStatus({
-          message: "❌ Something went wrong. Please try again.",
+          message: "❌ Failed to send message.",
           type: "error",
         });
       }
     } catch {
       setStatus({
-        message: "❌ Something went wrong. Please try again.",
+        message: "❌ Something went wrong.",
         type: "error",
       });
     } finally {
       setIsSubmitting(false);
     }
-  };
+  };return (
+  <section
+    id="contact"
+    className="relative overflow-hidden py-24 px-6 bg-gradient-to-b from-slate-50 via-white to-sky-50"
+  >
+    {/* Background Blobs */}
+    <motion.div
+      animate={{
+        x: [0, 40, 0],
+        y: [0, -40, 0],
+      }}
+      transition={{
+        duration: 10,
+        repeat: Infinity,
+      }}
+      className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-sky-300/20 blur-[120px]"
+    />
 
-  return (
-    <section
-      id="contact"
-      className="relative overflow-hidden py-24 md:py-32 px-5 md:px-8 bg-gradient-to-b from-white via-cream to-cream-dark"
-    >
-      {/* Floating Background */}
+    <motion.div
+      animate={{
+        x: [0, -40, 0],
+        y: [0, 40, 0],
+      }}
+      transition={{
+        duration: 12,
+        repeat: Infinity,
+      }}
+      className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-blue-300/20 blur-[120px]"
+    />
+
+    <div className="relative max-w-7xl mx-auto">
+
+      {/* Heading */}
 
       <motion.div
-        animate={{
-          x: [0, 50, 0],
-          y: [0, -40, 0],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute -top-24 -left-24 w-80 md:w-96 h-80 md:h-96 rounded-full bg-sky-300/20 blur-[120px]"
-      />
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="text-center mb-16"
+      >
 
-      <motion.div
-        animate={{
-          x: [0, -40, 0],
-          y: [0, 40, 0],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute -bottom-24 -right-24 w-80 md:w-96 h-80 md:h-96 rounded-full bg-blue-300/20 blur-[120px]"
-      />
+        <span className="inline-flex items-center gap-2 rounded-full bg-green-100 px-5 py-2 text-green-700 font-semibold">
 
-      <div className="relative max-w-4xl mx-auto"><motion.div
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7 }}
-  viewport={{ once: true }}
-  className="text-center mb-16"
+          <span className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></span>
+
+          Available For Work
+
+        </span>
+
+        <h2 className="mt-6 text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-sky-500 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
+
+          Get In Touch
+
+        </h2>
+
+        <p className="mt-6 max-w-2xl mx-auto text-slate-600 text-lg leading-8">
+
+          I'm available for freelance work, internships and full-time opportunities.
+          Let's build something amazing together.
+
+        </p>
+
+      </motion.div>
+
+      {/* Layout */}
+
+      <div className="max-w-2xl mx-auto">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="rounded-[32px] bg-white/80 backdrop-blur-2xl border border-sky-100 shadow-2xl p-8"
+        >
+          <form
+  onSubmit={handleSubmit}
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  className="space-y-6"
 >
+  <input
+    type="hidden"
+    name="access_key"
+    value="893fe57a-4af3-433a-9a78-c97da16c0122"
+  />
 
-  {/* Tag */}
-  <span className="inline-block px-4 py-2 rounded-full bg-sky-100 text-sky-700 font-semibold text-sm">
-    Let's Connect
-  </span>
+  {/* Name */}
 
-  {/* Heading */}
-  <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-slate-800">
-    Get In Touch
-  </h2>
+  <div className="relative">
 
-  <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-sky-500 to-blue-600"></div>
+    <input
+      type="text"
+      name="name"
+      required
+      placeholder="Your Name"
+      className="
+      w-full
+      rounded-2xl
+      border
+      border-sky-100
+      bg-white/70
+      px-5
+      py-4
+      outline-none
+      transition
+      focus:border-sky-500
+      focus:ring-4
+      focus:ring-sky-100
+    "
+    />
 
-  <p className="mt-6 text-slate-600 text-lg leading-8 max-w-2xl mx-auto">
-    I'm currently open to new opportunities. Whether you have a question,
-    project idea, or just want to say hello — feel free to reach out.
-  </p>
-
-</motion.div>
-
-{/* Contact Card */}
-<motion.div
-  initial={{ opacity: 0, y: 50, scale: 0.95 }}
-  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-  transition={{ type: "spring", stiffness: 120, damping: 15 }}
-  viewport={{ once: true }}
-  className="
-    relative
-    overflow-hidden
-    rounded-3xl
-    border
-    border-blue-100
-    bg-white/80
-    backdrop-blur-xl
-    shadow-xl
-    p-8 md:p-10
-  "
->
-
-  {/* Glow Background */}
-  <div className="absolute inset-0 opacity-0 hover:opacity-100 transition duration-500">
-    <div className="absolute -top-24 -right-24 w-72 h-72 bg-sky-300/20 blur-[120px] rounded-full"></div>
-    <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-blue-300/20 blur-[120px] rounded-full"></div>
   </div>
 
-  <form
-    onSubmit={handleSubmit}
-    action="https://api.web3forms.com/submit"
-    method="POST"
-    className="relative z-10 space-y-6"
-  >
+  {/* Email */}
+
+  <div className="relative">
+
     <input
-      type="hidden"
-      name="access_key"
-      value="893fe57a-4af3-433a-9a78-c97da16c0122"
+      type="email"
+      name="email"
+      required
+      placeholder="Email Address"
+      className="
+      w-full
+      rounded-2xl
+      border
+      border-sky-100
+      bg-white/70
+      px-5
+      py-4
+      outline-none
+      transition
+      focus:border-sky-500
+      focus:ring-4
+      focus:ring-sky-100
+    "
     />
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {/* Name Input */}
-  <input
-    type="text"
-    name="name"
-    placeholder="Your Name"
-    required
-    className="
+
+  </div>
+
+  {/* Phone */}
+
+  <div className="relative">
+
+    <input
+      type="tel"
+      name="phone"
+      placeholder="Phone Number (Optional)"
+      className="
       w-full
-      p-4
-      rounded-xl
-      bg-white/70
+      rounded-2xl
       border
       border-sky-100
-      focus:outline-none
-      focus:ring-2
-      focus:ring-sky-400
-      focus:border-sky-400
-      transition-all
-      text-slate-700
-      placeholder:text-slate-400
-    "
-  />
-
-  {/* Email Input */}
-  <input
-    type="email"
-    name="email"
-    placeholder="Your Email"
-    required
-    className="
-      w-full
-      p-4
-      rounded-xl
       bg-white/70
+      px-5
+      py-4
+      outline-none
+      transition
+      focus:border-sky-500
+      focus:ring-4
+      focus:ring-sky-100
+    "
+    />
+
+  </div>
+
+  {/* Subject */}
+
+  <div className="relative">
+
+    <input
+      type="text"
+      name="subject"
+      placeholder="Subject"
+      className="
+      w-full
+      rounded-2xl
       border
       border-sky-100
-      focus:outline-none
-      focus:ring-2
-      focus:ring-sky-400
-      focus:border-sky-400
-      transition-all
-      text-slate-700
-      placeholder:text-slate-400
+      bg-white/70
+      px-5
+      py-4
+      outline-none
+      transition
+      focus:border-sky-500
+      focus:ring-4
+      focus:ring-sky-100
     "
-  />
+    />
 
-</div>
+  </div>
 
-{/* Message */}
-<textarea
-  name="message"
-  rows="6"
-  placeholder="Your Message..."
-  required
-  className="
+  {/* Message */}
+
+  <textarea
+    name="message"
+    rows="6"
+    required
+    placeholder="Write your message..."
+    className="
     w-full
-    p-4
-    rounded-xl
-    bg-white/70
+    rounded-2xl
     border
     border-sky-100
-    focus:outline-none
-    focus:ring-2
-    focus:ring-sky-400
-    focus:border-sky-400
-    transition-all
-    text-slate-700
-    placeholder:text-slate-400
+    bg-white/70
+    p-5
     resize-none
+    outline-none
+    transition
+    focus:border-sky-500
+    focus:ring-4
+    focus:ring-sky-100
   "
-></textarea>{/* Submit Button */}
-<div className="text-center pt-4">
+  />
 
-  <button
-    type="submit"
+  {/* Button */}
+
+  <motion.button
+    whileHover={{
+      scale: 1.03,
+    }}
+    whileTap={{
+      scale: 0.97,
+    }}
     disabled={isSubmitting}
+    type="submit"
     className="
-      inline-flex
-      items-center
-      justify-center
-      gap-2
-      px-10
-      py-3
-      rounded-full
-      bg-gradient-to-r
-      from-sky-500
-      to-blue-600
-      text-white
-      font-semibold
-      shadow-lg
-      hover:scale-105
-      hover:shadow-[0_15px_40px_rgba(59,130,246,0.35)]
-      transition-all
-      duration-300
-      disabled:opacity-60
-      disabled:cursor-not-allowed
-    "
+    w-full
+    rounded-2xl
+    bg-gradient-to-r
+    from-sky-500
+    via-blue-600
+    to-cyan-500
+    py-4
+    text-lg
+    font-bold
+    text-white
+    shadow-xl
+    flex
+    items-center
+    justify-center
+    gap-3
+    transition-all
+    disabled:opacity-70
+  "
   >
+
     {isSubmitting ? (
       <>
-        <Loader2 className="h-5 w-5 animate-spin" />
+        <Loader2
+          className="animate-spin"
+          size={20}
+        />
         Sending...
       </>
     ) : (
       <>
+        <Send size={20} />
         Send Message
+        <ArrowRight size={18} />
       </>
     )}
-  </button>
 
-</div>
+  </motion.button>
 
-{status.message && (
-  <motion.p
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    className={`mt-6 text-center font-medium ${
-      status.type === "success"
-        ? "text-green-600"
-        : "text-red-500"
-    }`}
-  >
-    {status.message}
-  </motion.p>
-)}
-  </form>
+  {/* Status */}
 
-</motion.div>
+  {status.message && (
 
-{/* Bottom Decoration */}
-<motion.div
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.4 }}
-  className="flex justify-center mt-16"
->
-  <span className="text-slate-500 text-sm tracking-wide">
-    Built with React • Tailwind • Framer Motion
-  </span>
-</motion.div>
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 10,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      className={`
+        rounded-2xl
+        p-4
+        text-center
+        font-semibold
+        ${
+          status.type === "success"
+            ? "bg-green-100 text-green-700 border border-green-300"
+            : "bg-red-100 text-red-700 border border-red-300"
+        }
+      `}
+    >
+      {status.message}
+    </motion.div>
+
+  )}
+
+</form>
+        </motion.div>
 
       </div>
-    </section>
-  );
+
+    </div>
+    {/* END max-w-7xl */}
+
+  </section>
+);
 }

@@ -1,12 +1,13 @@
-import { Github, Instagram, Linkedin, Whatsapp } from '../sections/Icons';
+import { Github, Instagram, Linkedin, Whatsapp, Phone,
+  Mail, MapPin } from '../sections/Icons';
 import { Link } from 'react-scroll';
 
 export default function Footer() {
   
   return (
-    <footer className="bg-dark border-t border-dusty/20 pt-16 pb-8 mt-10 text-cream">
+    <footer className="bg-dark border-t border-dusty/20 pt-16 pb-8 text-cream">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           
           {/* Brand & Description */}
           <div className="md:col-span-1">
@@ -27,6 +28,24 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Location */}
+          <div className="md:col-span-1">
+            <h4 className="text-lg font-semibold mb-4 text-cream">Location</h4>
+            <div className="flex items-start gap-3 text-cream/70 text-sm font-medium">
+              <MapPin size={20} className="shrink-0 mt-1" />
+              <p>Surendranagar, Gujarat, India 363040</p>
+            </div>
+            <h4 className="text-lg font-semibold mt-4 mb-4 text-cream">Contact </h4>
+            <div className="flex items-start gap-3 text-cream/70 text-sm font-medium">
+              <Mail className="w-5 h-5" />
+              <p>nakiyaraviraj19@gmail.com</p>
+            </div>
+              <div className="flex items-start mt-4 gap-3 text-cream/70 text-sm font-medium">
+           <Phone className="w-5 h-5" />
+              <p>+91 82000 86009</p>
+            </div>
+          </div>
+          
           {/* Socials */}
           <div className="md:col-span-1">
             <h4 className="text-lg font-semibold mb-4 text-cream">Connect</h4>
