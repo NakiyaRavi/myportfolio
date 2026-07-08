@@ -141,12 +141,17 @@ export default function Contact() {
 
   <form
     onSubmit={handleSubmit}
-    action="https://formsubmit.co/nakiyaraviraj19@gmail.com"
+    action="https://api.web3forms.com/submit"
     method="POST"
     className="relative z-10 space-y-6"
-  ><div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-  {/* Name Input */}
+  >
+    <input
+      type="hidden"
+      name="access_key"
+      value="893fe57a-4af3-433a-9a78-c97da16c0122"
+    />
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Name Input */}
   <input
     type="text"
     name="name"
