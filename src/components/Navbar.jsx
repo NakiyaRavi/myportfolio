@@ -14,7 +14,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 w-full z-50 bg-dark/95 backdrop-blur-md border-b border-dusty/20 shadow-lg shadow-dusty/5"
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link to="home" spy={true} smooth={true} offset={-70} duration={500} className="text-xl font-bold text-cream font-mono cursor-pointer">Ravi Nakiya</Link>
+        <Link to="home" spy={true} smooth={true} offset={-70} duration={500} className="text-xl font-bold text-cream font-mono cursor-pointer">RAVI.CODES</Link>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 font-mono text-sm">
