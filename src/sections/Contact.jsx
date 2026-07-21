@@ -1,371 +1,187 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import {
-  Loader2, Send, ArrowRight
-} from "lucide-react";
+import React, { useState } from 'react';
+import '../styles/contact.css';
 
-export default function Contact() {
-  const [status, setStatus] = useState({
-    message: "",
-    type: "",
-  });
+export const Contact = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState({ loading: false, success: false, message: '' });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const whatsappNumber = "918200086009";
+  const userEmail = "nakiyaraviraj19@gmail.com";
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    setIsSubmitting(true);
-    setStatus({
-      message: "",
-      type: "",
-    });
-
-    const form = e.target;
-    const data = new FormData(form);
+    setStatus({ loading: true, success: false, message: 'Sending...' });
 
     try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: {
-          Accept: "application/json",
+      const response = await fetch(`https://formsubmit.co/ajax/${userEmail}`, {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
+        body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _subject: `New Portfolio Message from ${formData.name}!`
+        })
       });
 
       if (response.ok) {
         setStatus({
-          message: "✅ Message sent successfully!",
-          type: "success",
+          loading: false,
+          success: true,
+          message: '🚀 Message sent successfully! I will contact you soon.'
         });
-
-        form.reset();
+        setFormData({ name: '', email: '', message: '' }); // Form reset
       } else {
         setStatus({
-          message: "❌ Failed to send message.",
-          type: "error",
+          loading: false,
+          success: false,
+          message: '❌ Failed to send message. Please try again.'
         });
       }
-    } catch {
+    } catch (error) {
       setStatus({
-        message: "❌ Something went wrong.",
-        type: "error",
+        loading: false,
+        success: false,
+        message: '❌ Something went wrong. Please check your connection.'
       });
-    } finally {
-      setIsSubmitting(false);
     }
-  };return (
-  <section
-    id="contact"
-    className="relative overflow-hidden py-24 px-6 bg-gradient-to-b from-slate-50 via-white to-sky-50"
-  >
-    {/* Background Blobs */}
-    <motion.div
-      animate={{
-        x: [0, 40, 0],
-        y: [0, -40, 0],
-      }}
-      transition={{
-        duration: 10,
-        repeat: Infinity,
-      }}
-      className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-sky-300/20 blur-[120px]"
-    />
+  };
 
-    <motion.div
-      animate={{
-        x: [0, -40, 0],
-        y: [0, 40, 0],
-      }}
-      transition={{
-        duration: 12,
-        repeat: Infinity,
-      }}
-      className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-blue-300/20 blur-[120px]"
-    />
+  return (
+    <section className="contact-section" id="contact">
+      <div className="contact-container">
+        
+        {/* Section Header */}
+        <div className="section-header">
+          <span className="section-badge">GET IN TOUCH</span>
+          <h2 className="section-title">
+            Let's Build Something <span className="neon-text-purple">Great</span>
+          </h2>
+        </div>
 
-    <div className="relative max-w-7xl mx-auto">
+        {/* Contact Equal Grid Layout */}
+        <div className="contact-grid">
+          
+          {/* Left Column: Equal Box Height Cards */}
+          <div className="contact-left">
+            <div className="contact-card glass-card">
+              <div className="icon-box location-icon">📍</div>
+              <div>
+                <span className="info-label">Location</span>
+                <p className="info-value">Surendranagar, Gujarat, India</p>
+              </div>
+            </div>
 
-      {/* Heading */}
+            <div className="contact-card glass-card">
+              <div className="icon-box phone-icon">📞</div>
+              <div>
+                <span className="info-label">Call / WhatsApp</span>
+                <p className="info-value">
+                  <a href="tel:+918200086009">+91 82000 86009</a>
+                </p>
+              </div>
+            </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="text-center mb-16"
-      >
+            <div className="contact-card glass-card">
+              <div className="icon-box mail-icon">✉️</div>
+              <div>
+                <span className="info-label">Email Support</span>
+                <p className="info-value">
+                  <a href={`mailto:${userEmail}`}>{userEmail}</a>
+                </p>
+              </div>
+            </div>
 
-        <span className="inline-flex items-center gap-2 rounded-full bg-green-100 px-5 py-2 text-green-700 font-semibold">
+            <div className="whatsapp-cta-box glass-card">
+              <h4>Prefer instant chat?</h4>
+              <p>Direct message on WhatsApp for fast response.</p>
+              <a 
+                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi! I would like to discuss a project.")}`} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="whatsapp-btn"
+              >
+                💬 Chat on WhatsApp
+              </a>
+            </div>
+          </div>
 
-          <span className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></span>
+          {/* Right Column: AJAX Direct Form */}
+          <div className="contact-right glass-card">
+            <h3 className="form-title">Send Me A Message</h3>
+            
+            <form onSubmit={handleSubmit} className="contact-form">
+              <div className="form-group">
+                <label htmlFor="name">Your Name</label>
+                <input 
+                  type="text" 
+                  id="name"
+                  name="name" 
+                  placeholder="John Doe" 
+                  value={formData.name}
+                  onChange={handleChange}
+                  required 
+                />
+              </div>
 
-          Available For Work
+              <div className="form-group">
+                <label htmlFor="email">Your Email</label>
+                <input 
+                  type="email" 
+                  id="email"
+                  name="email" 
+                  placeholder="john@example.com" 
+                  value={formData.email}
+                  onChange={handleChange}
+                  required 
+                />
+              </div>
 
-        </span>
+              <div className="form-group">
+                <label htmlFor="message">Project Details / Message</label>
+                <textarea 
+                  id="message"
+                  name="message" 
+                  rows="4" 
+                  placeholder="Tell me about your project requirement..." 
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                ></textarea>
+              </div>
 
-        <h2 className="mt-6 text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-sky-500 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              <button type="submit" className="submit-btn" disabled={status.loading}>
+                {status.loading ? "Sending..." : "Send Message 🚀"}
+              </button>
 
-          Get In Touch
+              {/* In-Page Success/Error Message Display */}
+              {status.message && (
+                <p style={{
+                  marginTop: '1rem',
+                  padding: '10px',
+                  borderRadius: '6px',
+                  fontSize: '0.9rem',
+                  fontWeight: '500',
+                  color: status.success ? '#4ade80' : '#f87171',
+                  background: status.success ? 'rgba(74, 222, 128, 0.1)' : 'rgba(248, 113, 113, 0.1)',
+                  border: `1px solid ${status.success ? '#4ade80' : '#f87171'}`
+                }}>
+                  {status.message}
+                </p>
+              )}
+            </form>
+          </div>
 
-        </h2>
-
-        <p className="mt-6 max-w-2xl mx-auto text-slate-600 text-lg leading-8">
-
-          I'm available for freelance work, internships and full-time opportunities.
-          Let's build something amazing together.
-
-        </p>
-
-      </motion.div>
-
-      {/* Layout */}
-
-      <div className="max-w-2xl mx-auto">
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 40,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.7,
-          }}
-          className="rounded-[32px] bg-white/80 backdrop-blur-2xl border border-sky-100 shadow-2xl p-8"
-        >
-          <form
-  onSubmit={handleSubmit}
-  action="https://api.web3forms.com/submit"
-  method="POST"
-  className="space-y-6"
->
-  <input
-    type="hidden"
-    name="access_key"
-    value="893fe57a-4af3-433a-9a78-c97da16c0122"
-  />
-
-  {/* Name */}
-
-  <div className="relative">
-
-    <input
-      type="text"
-      name="name"
-      required
-      placeholder="Your Name"
-      className="
-      w-full
-      rounded-2xl
-      border
-      border-sky-100
-      bg-white/70
-      px-5
-      py-4
-      outline-none
-      transition
-      focus:border-sky-500
-      focus:ring-4
-      focus:ring-sky-100
-    "
-    />
-
-  </div>
-
-  {/* Email */}
-
-  <div className="relative">
-
-    <input
-      type="email"
-      name="email"
-      required
-      placeholder="Email Address"
-      className="
-      w-full
-      rounded-2xl
-      border
-      border-sky-100
-      bg-white/70
-      px-5
-      py-4
-      outline-none
-      transition
-      focus:border-sky-500
-      focus:ring-4
-      focus:ring-sky-100
-    "
-    />
-
-  </div>
-
-  {/* Phone */}
-
-  <div className="relative">
-
-    <input
-      type="tel"
-      name="phone"
-      placeholder="Phone Number (Optional)"
-      className="
-      w-full
-      rounded-2xl
-      border
-      border-sky-100
-      bg-white/70
-      px-5
-      py-4
-      outline-none
-      transition
-      focus:border-sky-500
-      focus:ring-4
-      focus:ring-sky-100
-    "
-    />
-
-  </div>
-
-  {/* Subject */}
-
-  <div className="relative">
-
-    <input
-      type="text"
-      name="subject"
-      placeholder="Subject"
-      className="
-      w-full
-      rounded-2xl
-      border
-      border-sky-100
-      bg-white/70
-      px-5
-      py-4
-      outline-none
-      transition
-      focus:border-sky-500
-      focus:ring-4
-      focus:ring-sky-100
-    "
-    />
-
-  </div>
-
-  {/* Message */}
-
-  <textarea
-    name="message"
-    rows="6"
-    required
-    placeholder="Write your message..."
-    className="
-    w-full
-    rounded-2xl
-    border
-    border-sky-100
-    bg-white/70
-    p-5
-    resize-none
-    outline-none
-    transition
-    focus:border-sky-500
-    focus:ring-4
-    focus:ring-sky-100
-  "
-  />
-
-  {/* Button */}
-
-  <motion.button
-    whileHover={{
-      scale: 1.03,
-    }}
-    whileTap={{
-      scale: 0.97,
-    }}
-    disabled={isSubmitting}
-    type="submit"
-    className="
-    w-full
-    rounded-2xl
-    bg-gradient-to-r
-    from-sky-500
-    via-blue-600
-    to-cyan-500
-    py-4
-    text-lg
-    font-bold
-    text-white
-    shadow-xl
-    flex
-    items-center
-    justify-center
-    gap-3
-    transition-all
-    disabled:opacity-70
-  "
-  >
-
-    {isSubmitting ? (
-      <>
-        <Loader2
-          className="animate-spin"
-          size={20}
-        />
-        Sending...
-      </>
-    ) : (
-      <>
-        <Send size={20} />
-        Send Message
-        <ArrowRight size={18} />
-      </>
-    )}
-
-  </motion.button>
-
-  {/* Status */}
-
-  {status.message && (
-
-    <motion.div
-      initial={{
-        opacity: 0,
-        y: 10,
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-      }}
-      className={`
-        rounded-2xl
-        p-4
-        text-center
-        font-semibold
-        ${
-          status.type === "success"
-            ? "bg-green-100 text-green-700 border border-green-300"
-            : "bg-red-100 text-red-700 border border-red-300"
-        }
-      `}
-    >
-      {status.message}
-    </motion.div>
-
-  )}
-
-</form>
-        </motion.div>
+        </div>
 
       </div>
-
-    </div>
-    {/* END max-w-7xl */}
-
-  </section>
-);
-}
+    </section>
+  );
+};

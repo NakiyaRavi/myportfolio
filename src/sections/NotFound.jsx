@@ -1,81 +1,55 @@
-import { motion } from 'framer-motion';
-import { Home } from 'lucide-react';
+import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import '../styles/notfound.css'; // Path adjust kar lein agar needed ho
 
-const text = '404';
-const chars = text.split('');
+export const NotFound = () => {
+  const navigate = useNavigate();
 
-const container = {
-  hidden: { opacity: 0 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 * i },
-  }),
-};
-
-const child = {
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: 'spring',
-      damping: 12,
-      stiffness: 200,
-    },
-  },
-  hidden: { opacity: 0, y: 40 },
-};
-export default function NotFound() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 bg-cream text-center">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-lg"
-      >
-        <motion.h1
-          className="text-8xl sm:text-9xl font-bold text-dusty-dark flex justify-center overflow-hidden"
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
-          {chars.map((char, index) => (
-            <motion.span key={index} variants={child}>
-              {char}
-            </motion.span>
-          ))}
-        </motion.h1>
-        <motion.h2
-          className="text-2xl sm:text-3xl font-semibold text-dark mt-4 mb-6"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          Page Not Found
-        </motion.h2>
-        <motion.p
-          className="text-dark/80 text-base md:text-lg mb-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          Oops! The page you are looking for does not exist. It might have been
-          moved or deleted.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.8 }}
-        >
-          <a
-            href="/"
-            className="inline-flex items-center gap-2 bg-dusty hover:bg-dusty-dark text-cream font-semibold py-3 px-8 rounded-full transition-all hover:shadow-[0_0_20px_rgba(123,150,184,0.4)]"
-          >
-            <Home size={20} />
-            <span>Go Back Home</span>
-          </a>
-        </motion.div>
-      </motion.div>
+    <section className="notfound-container">
+      {/* Background Glowing Orbs for Visual Effect */}
+      <div className="glow-orb orb-purple"></div>
+      <div className="glow-orb orb-blue"></div>
+
+      <div className="notfound-card glass-card">
+        {/* Large 404 Visual Indicator */}
+        <div className="error-code-wrapper">
+          <h1 className="error-code">4<span className="zero-glow">0</span>4</h1>
+        </div>
+
+        <div className="notfound-content">
+          <span className="error-badge font-mono">ERROR: PAGE_NOT_FOUND</span>
+          <h2 className="notfound-title">Lost in Cyberspace?</h2>
+          <p className="notfound-description">
+            The page you're looking for doesn't exist, has been removed, or is temporarily unavailable.
+          </p>
+
+          {/* Call to Action Buttons */}
+          <div className="notfound-actions">
+            <button 
+              onClick={() => navigate(-1)} 
+              className="btn-secondary"
+            >
+              ⬅️ Go Back
+            </button>
+            <Link to="/" className="btn-primary">
+              🏠 Back to Home
+            </Link>
+          </div>
+
+          {/* Helpful Links */}
+          <div className="quick-links">
+            <span>Or try visiting:</span>
+            <div className="links-group">
+              <Link to="/#projects">Projects</Link>
+              <span className="dot">•</span>
+              <Link to="/#contact">Contact Me</Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
-}
+};
+
+export default NotFound;

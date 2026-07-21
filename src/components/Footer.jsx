@@ -1,81 +1,64 @@
-import { Github, Instagram, Linkedin, Whatsapp, Phone,
-  Mail, MapPin } from '../sections/Icons';
-import { Link } from 'react-scroll';
+import React from 'react';
+import '../styles/footer.css';
 
-export default function Footer() {
-  
+export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  const whatsappNumber = "919876543210"; 
+  const whatsappMessage = encodeURIComponent("Hi! I would like to build a Web Project.");
+
   return (
-    <footer className="bg-dark border-t border-dusty/20 pt-16 pb-8 text-cream">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-          
-          {/* Brand & Description */}
-          <div className="md:col-span-1">
-            <h3 className="text-2xl font-bold mb-4 font-mono text-dusty">Ravi Nakiya</h3>
-            <p className="text-cream/70 text-sm leading-relaxed max-w-xs">
-              A passionate full-stack developer focusing on building exceptional digital experiences. Always learning, always creating.
-            </p>
-          </div>
+    <footer className="studio-footer">
+      {/* Top Main CTA Card */}
+      <div className="hero-cta-card">
+        <div className="cta-left">
+          <span className="availability-pill">● Available for Work</span>
+          <h2>Let’s create something great together.</h2>
+        </div>
+        <a 
+          href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`} 
+          target="_blank" 
+          rel="noreferrer" 
+          className="chat-btn"
+        >
+          Message on WhatsApp 💬
+        </a>
+      </div>
 
-          {/* Quick Links */}
-          <div className="md:col-span-1">
-            <h4 className="text-lg font-semibold mb-4 text-cream">Quick Links</h4>
-            <ul className="flex flex-col gap-3 text-cream/70 text-sm font-medium">
-              <li><Link to="home" smooth={true} offset={-70} duration={500} className="hover:text-dusty hover:translate-x-1 inline-block transition-all cursor-pointer">Home</Link></li>
-              <li><Link to="about" smooth={true} offset={-70} duration={500} className="hover:text-dusty hover:translate-x-1 inline-block transition-all cursor-pointer">About</Link></li>
-              <li><Link to="projects" smooth={true} offset={-70} duration={500} className="hover:text-dusty hover:translate-x-1 inline-block transition-all cursor-pointer">Projects</Link></li>
-              <li><Link to="contact" smooth={true} offset={-70} duration={500} className="hover:text-dusty hover:translate-x-1 inline-block transition-all cursor-pointer">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Location */}
-          <div className="md:col-span-1">
-            <h4 className="text-lg font-semibold mb-4 text-cream">Location</h4>
-            <div className="flex items-start gap-3 text-cream/70 text-sm font-medium">
-              <MapPin size={20} className="shrink-0 mt-1" />
-              <p>Surendranagar, Gujarat, India 363040</p>
-            </div>
-            <h4 className="text-lg font-semibold mt-4 mb-4 text-cream">Contact </h4>
-            <div className="flex items-start gap-3 text-cream/70 text-sm font-medium">
-              <Mail className="w-5 h-5" />
-              <p>nakiyaraviraj19@gmail.com</p>
-            </div>
-              <div className="flex items-start mt-4 gap-3 text-cream/70 text-sm font-medium">
-           <Phone className="w-5 h-5" />
-              <p>+91 82000 86009</p>
-            </div>
-          </div>
-          
-          {/* Socials */}
-          <div className="md:col-span-1">
-            <h4 className="text-lg font-semibold mb-4 text-cream">Connect</h4>
-            <div className="flex items-center gap-4">
-              <a href="https://github.com/NakiyaRavi" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full border border-dusty/20 text-cream/70 hover:text-dusty hover:border-dusty transition-all hover:-translate-y-1 shadow-sm">
-                  <Github size={20} />
-              </a>
-              <a href="https://www.linkedin.com/in/nakiya-raviraj/" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full border border-dusty/20 text-cream/70 hover:text-dusty hover:border-dusty transition-all hover:-translate-y-1 shadow-sm">
-                  <Linkedin size={20} />
-              </a>
-              <a href="https://www.instagram.com/nakiya_ravi_12" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full border border-dusty/20 text-cream/70 hover:text-dusty hover:border-dusty transition-all hover:-translate-y-1 shadow-sm">
-                  <Instagram size={20} />
-              </a>
-              <a href="https://wa.me/918200086009" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full border border-dusty/20 text-cream/70 hover:text-dusty hover:border-dusty transition-all hover:-translate-y-1 shadow-sm">
-                  <Whatsapp size={20} />
-              </a>
-            </div>
-          </div>
+      {/* Quick Info Strip */}
+      <div className="info-strip">
+        <div className="strip-item">
+          <span className="strip-label">ROLE</span>
+          <span className="strip-val">Web & Software Developer </span>
+        </div>
+        
+        <div className="strip-item">
+          <span className="strip-label">LOCATION</span>
+          <span className="strip-val">Surendranagar , Gujarat</span>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-dusty/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-cream/60 font-mono text-xs text-center md:text-left">
-            &copy; {new Date().getFullYear()} Ravi Nakiya. All rights reserved.
-          </p>
-          <p className="text-cream/60 font-mono text-xs flex items-center gap-1">
-            Built with <span className="text-red-500">❤️</span> using React & Tailwind
-          </p>
+        <div className="strip-item">
+          <span className="strip-label">CONTACT</span>
+          <a href="tel:+919876543210" className="strip-val link">+91 82000 86009</a>
         </div>
+
+        <div className="strip-item">
+          <span className="strip-label">EMAIL</span>
+          <a href="mailto:developer@example.com" className="strip-val link">nakiyaraviraj19@gmail.com</a>
+        </div>
+      </div>
+
+      {/* Minimal Social Buttons Bar */}
+      <div className="social-bar">
+        <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer">WhatsApp</a>
+        <a href="https://linkedin.com/in/nakiya-raviraj-1b2373343" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com/NakiyaRavi" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://instagram.com/nakiya_ravi_12" target="_blank" rel="noreferrer">Instagram</a>
+      </div>
+
+      {/* Copyright */}
+      <div className="footer-copyright">
+        © {currentYear} Ravi.Codes  . All rights reserved.
       </div>
     </footer>
   );
-}
+};
