@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/hero.css';
 
+
 export const Hero = () => {
   const whatsappNumber = "919876543210";
   const whatsappMessage = encodeURIComponent("Hi! I would like to build a Web Project.");
@@ -59,7 +60,7 @@ export const Hero = () => {
             {/* Center Circle with Developer Image */}
             <div className="core-nucleus">
               <img 
-                src="src/assets/hero.jpeg" 
+                src="/hero.jpeg" 
                 alt="Developer Profile" 
                 className="core-avatar-img"
               />
