@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/project.css';
+import project1 from "../assets/3dui.png";
+import project2 from "../assets/ui.png";
 
 export const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -25,7 +27,7 @@ export const Projects = () => {
       description: 'Interactive web showcase with smooth canvas animations, glassmorphism layouts, and responsive controls.',
       category: 'frontend',
       tags: ['React', 'Three.js', 'CSS Animations', 'Vite'],
-      image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop',
+      image: {project1},
       liveUrl: 'https://github.com/NakiyaRavi',
       githubUrl: 'https://github.com/NakiyaRavi'
     },
@@ -34,7 +36,7 @@ export const Projects = () => {
       description: 'Full-stack Web App allowing users to generate, format, and export custom text and digital media assets.',
       category: 'webapp',
       tags: ['React', 'Express API', 'MongoDB', 'REST API'],
-      image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop',
+      image: {project2},
       liveUrl: 'https://github.com/NakiyaRavi',
       githubUrl: 'https://github.com/NakiyaRavi'
     },

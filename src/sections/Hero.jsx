@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/hero.css';
-
+import heroImage from "../assets/hero.jpeg";
 
 export const Hero = () => {
   const whatsappNumber = "919876543210";
@@ -60,7 +60,7 @@ export const Hero = () => {
             {/* Center Circle with Developer Image */}
             <div className="core-nucleus">
               <img 
-                src="./hero.jpeg" 
+                src={heroImage} 
                 alt="Developer Profile" 
                 className="core-avatar-img"
               />
