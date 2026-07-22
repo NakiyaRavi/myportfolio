@@ -27,7 +27,7 @@ export const Projects = () => {
       description: 'Interactive web showcase with smooth canvas animations, glassmorphism layouts, and responsive controls.',
       category: 'frontend',
       tags: ['React', 'Three.js', 'CSS Animations', 'Vite'],
-      image: {project1},
+      image: project1,
       liveUrl: 'https://github.com/NakiyaRavi',
       githubUrl: 'https://github.com/NakiyaRavi'
     },
@@ -36,7 +36,7 @@ export const Projects = () => {
       description: 'Full-stack Web App allowing users to generate, format, and export custom text and digital media assets.',
       category: 'webapp',
       tags: ['React', 'Express API', 'MongoDB', 'REST API'],
-      image: {project2},
+      image: project2,
       liveUrl: 'https://github.com/NakiyaRavi',
       githubUrl: 'https://github.com/NakiyaRavi'
     },
