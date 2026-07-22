@@ -38,7 +38,7 @@ export const Footer = () => {
 
         <div className="strip-item">
           <span className="strip-label">CONTACT</span>
-          <a href="tel:+919876543210" className="strip-val link">+91 82000 86009</a>
+          <a href="tel:+918200086009" className="strip-val link">+91 82000 86009</a>
         </div>
 
         <div className="strip-item">
