@@ -3,7 +3,7 @@ import '../styles/footer.css';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const whatsappNumber = "919876543210"; 
+  const whatsappNumber = "918200086009"; 
   const whatsappMessage = encodeURIComponent("Hi! I would like to build a Web Project.");
 
   return (
