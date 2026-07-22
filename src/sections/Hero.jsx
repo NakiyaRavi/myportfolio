@@ -3,7 +3,7 @@ import '../styles/hero.css';
 import heroImage from "../assets/hero.jpeg";
 
 export const Hero = () => {
-  const whatsappNumber = "919876543210";
+  const whatsappNumber = "918200086009";
   const whatsappMessage = encodeURIComponent("Hi! I would like to build a Web Project.");
 
   return (
