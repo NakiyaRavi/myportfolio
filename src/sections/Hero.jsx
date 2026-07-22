@@ -60,7 +60,7 @@ export const Hero = () => {
             {/* Center Circle with Developer Image */}
             <div className="core-nucleus">
               <img 
-                src="/hero.jpeg" 
+                src="./hero.jpeg" 
                 alt="Developer Profile" 
                 className="core-avatar-img"
               />
