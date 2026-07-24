@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/project.css';
 import project1 from "../assets/3dui.png";
 import project2 from "../assets/ui.png";
+import project3 from "../assets/vmartdashbord.png";
 
 export const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -18,8 +19,8 @@ export const Projects = () => {
       description: 'Modern sales dashboard with real-time analytics, dark theme UI, and interactive data visualization charts.',
       category: 'webapp',
       tags: ['React', 'Node.js', 'Tailwind CSS', 'Chart.js'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
-      liveUrl: 'https://github.com/NakiyaRavi',
+      image: project3,
+      liveUrl: 'https://nakiyaravi.github.io/vmartdashbord/',
       githubUrl: 'https://github.com/NakiyaRavi'
     },
     {
