@@ -3,27 +3,32 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ParticleCanvas } from './Background';
 import { Navbar } from './components/Navbar';
 import { Hero } from './sections/Hero';
-import { Footer } from './components/Footer';
-import './index.css';
 import { About } from './sections/About';
+import { Services } from './sections/Services';
+import { Experience } from './sections/Experience';
 import { Skills } from './sections/Skills';
 import { Projects } from './sections/Projects';
+import { Testimonials } from './sections/Testimonials';
 import { Contact } from './sections/Contact';
+import { Footer } from './components/Footer';
 import NotFound from './sections/NotFound';
+import './index.css';
 
 const MainPortfolio = () => (
   <main>
     <Hero />
     <About />
+    <Services />
+    <Experience />
     <Skills />
     <Projects />
+    <Testimonials />
     <Contact />
   </main>
 );
 
 function App() {
   return (
-    // basename pass karne se routing '/myportfolio/' base path ko handle kar legi
     <BrowserRouter basename="/myportfolio">
       <div style={{ position: 'relative', width: '100%', minHeight: '100vh', overflowX: 'hidden' }}>
         <ParticleCanvas />

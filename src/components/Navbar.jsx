@@ -4,7 +4,6 @@ import '../styles/Navbar.css';
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Close mobile menu on screen resize to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) setIsOpen(false);
@@ -16,7 +15,11 @@ export const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
+    { name: 'Services', href: '#services' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
   ];
 

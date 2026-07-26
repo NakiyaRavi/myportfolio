@@ -1,36 +1,36 @@
 import React, { useState } from 'react';
-import '../styles/about.css'
+import '../styles/about.css';
 
 export const About = () => {
   const [activeTab, setActiveTab] = useState('skills');
 
   const stats = [
-    { label: 'Years Experience', value: '1' },
-    { label: 'Projects Completed', value: '5+' },
+    { label: 'Years Experience', value: '1+' },
+    { label: 'Projects Completed', value: '8+' },
     { label: 'Client Satisfaction', value: '100%' },
-    { label: 'Code Quality Score', value: '98%' },
+    { label: 'Lighthouse Speed Score', value: '98%' },
   ];
 
   const highlights = [
     {
       icon: '⚡',
-      title: 'High Performance',
-      desc: 'Optimized rendering, fast loading speeds, and smooth 60fps animations.'
+      title: 'High Performance & Speed',
+      desc: 'Optimized DOM rendering, lazy loading, and smooth 60fps animations.'
     },
     {
       icon: '📱',
-      title: 'Responsive Design',
-      desc: 'Mobile-first approach ensuring flawless UI across all device screen sizes.'
+      title: 'Responsive & Mobile First',
+      desc: 'Flawless UI experiences tailored for all screen sizes from mobile to 4K desktop.'
     },
     {
       icon: '🛡️',
-      title: 'Clean & Scalable Code',
-      desc: 'Maintainable architecture structured for effortless long-term scalability.'
+      title: 'Clean Architecture',
+      desc: 'Modular, maintainable, self-documenting code built for enterprise scale.'
     },
     {
       icon: '🔌',
-      title: 'API & Backend Integration',
-      desc: 'Seamless data flow connecting modern React frontends with robust REST/Node APIs.'
+      title: 'Robust API Integrations',
+      desc: 'Seamless data layer connecting React frontends with ASP.NET Core & Node REST APIs.'
     },
   ];
 
@@ -44,23 +44,26 @@ export const About = () => {
           <h2 className="section-title">
             Architecting <span className="neon-text-purple">Digital</span> <span className="neon-text-cyan">Solutions</span>
           </h2>
+          <p className="section-subtitle">
+            Passionate Full-Stack Developer bridging aesthetic design with robust backend engineering.
+          </p>
         </div>
 
-        {/* Top Story Card */}
+        {/* Story Bento Card */}
         <div className="about-main-card glass-card">
           <div className="story-header">
             <h3 className="story-title">
-              Full-Stack Web Developer with a Passion for Interactive Design
+              Full-Stack Software Engineer Specializing in React 19 & ASP.NET Core
             </h3>
             <span className="location-tag">📍 Surendranagar, Gujarat, India</span>
           </div>
 
           <div className="story-body">
             <p>
-              I am a dedicated Web Developer specialized in crafting high-speed, modern web applications and custom software solutions. My expertise spans across frontend technologies like <strong>React js,Angular js, JavaScript (ES6+), and Advanced CSS3</strong>, as well as backend integrations using <strong>Asp.net core and RESTful APIs</strong>.
+              I am <strong>Raviraj Nakiya</strong>, a dedicated Web Developer specialized in building scalable, modern web applications and custom software solutions. My core stack includes <strong>React.js, ASP.NET Core, JavaScript (ES6+), Node.js, Express, and Tailwind CSS</strong>.
             </p>
             <p>
-              Whether it’s building complex web platforms from scratch, designing interactive glassmorphic UIs, or optimizing existing codebases for peak SEO and performance, I deliver software that combines elegant visual aesthetics with rock-solid engineering.
+              Whether it’s designing sleek glassmorphic user interfaces, engineering high-speed RESTful APIs, or optimizing existing applications for peak performance and SEO, I deliver solutions that merge visual excellence with rock-solid security.
             </p>
           </div>
 
@@ -88,13 +91,13 @@ export const About = () => {
               className={`tab-btn ${activeTab === 'services' ? 'active' : ''}`}
               onClick={() => setActiveTab('services')}
             >
-              Services Offered
+              Core Competencies
             </button>
             <button 
               className={`tab-btn ${activeTab === 'experience' ? 'active' : ''}`}
               onClick={() => setActiveTab('experience')}
             >
-              Workflow & Standards
+              Engineering Standards
             </button>
           </div>
 
@@ -104,7 +107,7 @@ export const About = () => {
               <div className="tab-pane active-pane">
                 <div className="skills-grid">
                   <div className="skill-category">
-                    <h5>Frontend Development</h5>
+                    <h5>Frontend Ecosystem</h5>
                     <div className="chips-wrapper">
                       <span>React.js</span>
                       <span>Angular.js</span>
@@ -115,63 +118,63 @@ export const About = () => {
                     </div>
                   </div>
                   <div className="skill-category">
-                    <h5>Backend & Tools</h5>
+                    <h5>Backend & Database</h5>
                     <div className="chips-wrapper">
-                      <span>Asp.net Core</span>
+                      <span>ASP.NET Core</span>
                       <span>Node.js</span>
                       <span>Express.js</span>
                       <span>REST APIs</span>
-                      <span>Git & GitHub</span>
-                      <span>VS Code / Vite</span>
+                      <span>SQL / C#</span>
+                      <span>MongoDB</span>
                     </div>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Tab 2: Services Offered */}
+            {/* Tab 2: Core Competencies */}
             {activeTab === 'services' && (
               <div className="tab-pane active-pane">
                 <div className="services-list-grid">
                   <div className="service-item">
-                    <h4>💻 Full-Stack Web Development</h4>
-                    <p>End-to-end development of custom websites and scalable web applications tailored to business needs.</p>
+                    <h4>💻 Full-Stack App Development</h4>
+                    <p>Building high-performing, end-to-end web applications with React frontends and ASP.NET backends.</p>
                   </div>
                   <div className="service-item">
-                    <h4>🎨 Interactive UI/UX Design</h4>
-                    <p>Creating responsive layouts, glassmorphism designs, and smooth animated user experiences.</p>
+                    <h4>🎨 Trending Glassmorphic UI</h4>
+                    <p>Designing micro-interactive components, sleek animations, and dark mode interfaces.</p>
                   </div>
                   <div className="service-item">
-                    <h4>🚀 Performance & SEO Optimization</h4>
-                    <p>Speeding up slow load times, fixing responsive bugs, and structuring pages for search engines.</p>
+                    <h4>🚀 Performance Tuning & SEO</h4>
+                    <p>Ensuring sub-second load times, WCAG accessibility, and high search engine visibility.</p>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Tab 3: Workflow & Standards */}
+            {/* Tab 3: Engineering Standards */}
             {activeTab === 'experience' && (
               <div className="tab-pane active-pane">
                 <div className="workflow-steps">
                   <div className="step-card">
                     <span className="step-num">01</span>
                     <div>
-                      <h5>Discovery & Planning</h5>
-                      <p>Understanding project requirements, user journeys, and technical scope before writing code.</p>
+                      <h5>Requirements & Architecture</h5>
+                      <p>Analyzing project needs, data flows, and defining clean component boundaries.</p>
                     </div>
                   </div>
                   <div className="step-card">
                     <span className="step-num">02</span>
                     <div>
-                      <h5>Clean Development</h5>
-                      <p>Writing modular, self-documenting code with modern frameworks and real-time testing.</p>
+                      <h5>Agile Development</h5>
+                      <p>Writing clean, typed, modular code with git version control and unit testing.</p>
                     </div>
                   </div>
                   <div className="step-card">
                     <span className="step-num">03</span>
                     <div>
-                      <h5>Optimization & Deployment</h5>
-                      <p>Rigorously testing performance, cross-browser compatibility, and deploying to production.</p>
+                      <h5>Deployment & Optimization</h5>
+                      <p>Automated build processes, Lighthouse testing, and deployment to production hosting.</p>
                     </div>
                   </div>
                 </div>
@@ -180,7 +183,7 @@ export const About = () => {
           </div>
         </div>
 
-        {/* Core Value Highlights Grid */}
+        {/* Highlights Grid */}
         <div className="highlights-grid">
           {highlights.map((item, index) => (
             <div key={index} className="highlight-card glass-card">
